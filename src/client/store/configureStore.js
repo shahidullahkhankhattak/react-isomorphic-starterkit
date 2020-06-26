@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
-import { name, version } from '../../package.json';
+import { name, version } from '../../../package.json';
 import rootReducer from '../reducers';
 import createHelpers from './createHelpers';
 import createLogger from './logger';

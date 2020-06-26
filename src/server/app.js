@@ -10,19 +10,19 @@ import nodeFetch from 'node-fetch';
 import React from 'react';
 import ReactDOM from 'react-dom/server';
 import PrettyError from 'pretty-error';
-import App from '../components/App';
-import Html from '../components/Html';
-import { ErrorPageWithoutStyle } from '../routes/error/ErrorPage';
-import errorPageStyle from '../routes/error/ErrorPage.css';
-import createFetch from '../createFetch';
+import App from '../client/components/App';
+import Html from '../client/components/Html';
+import { ErrorPageWithoutStyle } from '../client/pages/error/ErrorPage';
+import errorPageStyle from '../client/pages/error/ErrorPage.css';
+import createFetch from '../client/createFetch';
 import passport from './passport';
-import router from '../router';
+import router from '../client/router';
 import models from './data/models';
 import schema from './data/schema';
 // import assets from './asset-manifest.json'; // eslint-disable-line import/no-unresolved
 import chunks from './chunk-manifest.json'; // eslint-disable-line import/no-unresolved
-import configureStore from '../store/configureStore';
-import { setRuntimeVariable } from '../actions/runtime';
+import configureStore from '../client/store/configureStore';
+import { setRuntimeVariable } from '../client/actions/runtime';
 import config from './config/index';
 
 process.on('unhandledRejection', (reason, p) => {
@@ -242,7 +242,7 @@ if (!module.hot) {
 // -----------------------------------------------------------------------------
 if (module.hot) {
   app.hot = module.hot;
-  module.hot.accept('../router');
+  module.hot.accept('../client/router');
 }
 
 export default app;

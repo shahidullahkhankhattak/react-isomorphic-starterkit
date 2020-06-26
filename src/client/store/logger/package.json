@@ -1,6 +1,6 @@
 {
   "private": true,
   "name": "redux-logger-middleware",
-  "main": "./logger.server.js",
+  "main": "logger.server.js",
   "browser": "./logger.client.js"
 }

@@ -6,25 +6,26 @@ const routes = {
   children: [
     {
       path: '',
-      load: () => import(/* webpackChunkName: 'home' */ './home'),
+      load: () => import(/* webpackChunkName: 'home' */ '../pages/home'),
     },
     {
       path: '/registration',
-      load: () => import(/* webpackChunkName: 'not-found' */ './registration'),
+      load: () =>
+        import(/* webpackChunkName: 'not-found' */ '../pages/registration'),
     },
     // Wildcard routes, e.g. { path: '(.*)', ... } (must go last)
     {
       path: '(.*)',
-      load: () => import(/* webpackChunkName: 'not-found' */ './not-found'),
+      load: () =>
+        import(/* webpackChunkName: 'not-found' */ '../pages/not-found'),
     },
   ],
 
   async action({ next }) {
-    // Execute each child route until one of them return the result
     const route = await next();
 
     // Provide default values for title, description etc.
-    route.title = `${route.title || 'Untitled Page'} - www.reactstarterkit.com`;
+    route.title = `${route.title || 'Home'} - Looking4`;
     route.description = route.description || '';
 
     return route;
@@ -35,7 +36,7 @@ const routes = {
 if (__DEV__) {
   routes.children.unshift({
     path: '/error',
-    action: require('./error').default,
+    action: require('../pages/error').default,
   });
 }
 

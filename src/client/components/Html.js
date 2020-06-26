@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import serialize from 'serialize-javascript';
-import config from '../server/config/index';
+import config from '../../server/config';
 
 /* eslint-disable react/no-danger */
 
@@ -33,6 +33,12 @@ export default function Html({
             dangerouslySetInnerHTML={{ __html: style.cssText }}
           />
         ))}
+        {/* if you want to add bootstrap then please uncomment this */}
+        {/* <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        /> */}
       </head>
       <body>
         <div id="app" dangerouslySetInnerHTML={{ __html: children }} />
