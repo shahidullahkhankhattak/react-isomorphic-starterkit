@@ -3,13 +3,6 @@ import PropTypes from 'prop-types';
 import StyleContext from 'isomorphic-style-loader/StyleContext';
 import { Provider as ReduxProvider } from 'react-redux';
 import ApplicationContext from './ApplicationContext';
-import '../assets/css/main.css';
-
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'jquery/dist/jquery.min';
- //import 'popper.js/dist/popper';
- //import 'bootstrap/dist/js/bootstrap.min';
-// import '../assets/js/main';
 
 export default function App({ context, insertCss, children }) {
   // NOTE: If you need to add or modify header, footer etc. of the app,
