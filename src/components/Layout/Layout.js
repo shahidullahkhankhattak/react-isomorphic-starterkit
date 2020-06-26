@@ -1,21 +1,14 @@
-import useStyles from 'isomorphic-style-loader/useStyles';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// external-global styles must be imported in your JS.
-import normalizeCss from 'normalize.css';
-import s from './Layout.css';
-import Header from '../Header';
-import Feedback from '../Feedback';
-import Footer from '../Footer';
+import Header from '../Header/index';
+import Footer from '../Footer/index';
 
 export default function Layout({ children }) {
-  useStyles(s, normalizeCss);
   return (
     <>
       <Header />
       {children}
-      <Feedback />
       <Footer />
     </>
   );
